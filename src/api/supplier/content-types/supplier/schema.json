@@ -4,7 +4,8 @@
   "info": {
     "singularName": "supplier",
     "pluralName": "suppliers",
-    "displayName": "Supplier"
+    "displayName": "Supplier",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,17 @@
   "attributes": {
     "Name": {
       "type": "string"
+    },
+    "supplierId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "supplier"
     }
   }
 }
